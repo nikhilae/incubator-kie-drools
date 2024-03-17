@@ -32,14 +32,14 @@ jobs:
    
 
     - name: Maven Clean Install
-      run: mvn clean install -DskipTests -pl drools-model/drools-model-codegen -am
-
+      run:  mvn clean install -Denforcer.skip=true -DskipTests -pl drools-model -am  
+      
     - name: Run Tests
-      run: mvn -pl drools-model/drools-model-codegen -Dtest=drools-model/drools-model-codegen,org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey
+      run: mvn -pl d drools-model -Dtest="org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey"
       
       
     - name: Run Tests with Nondex 
-      run: mvn -pl  drools-model/drools-model-codegen  test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Dtest==drools-model/drools-model-codegen,org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey
+      run: mvn -pl  drools-model  test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Dtest=="org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey"
      
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
