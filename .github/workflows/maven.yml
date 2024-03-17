@@ -39,7 +39,7 @@ jobs:
       
       
     - name: Run Tests with Nondex 
-      run: mvn -pl drools-model   test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Denforcer.fail=false -Dtest=="org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey"
+      run: mvn -pl drools-model   test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Denforcer.fail=false -DfailIfNoTests=false -Dtest=="org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey"
      
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
