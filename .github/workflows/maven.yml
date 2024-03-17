@@ -35,7 +35,7 @@ jobs:
       run:  mvn clean install -Denforcer.skip=true -DskipTests -pl drools-model -am  
       
     - name: Run Tests
-      run: mvn -pl drools-model -Dtest="org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey"
+      run: mvn -pl drools-model -Denforcer.fail=false -Dtest="org.drools.model.codegen.execmodel.GroupByTest#testFilterOnGroupByKey"
       
       
     - name: Run Tests with Nondex 
