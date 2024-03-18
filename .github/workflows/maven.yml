@@ -35,11 +35,11 @@ jobs:
       run:  mvn clean install -Denforcer.skip=true -DskipTests -pl drools-model -am  
       
     - name: Run Tests
-      run: mvn -pl drools-model -Denforcer.fail=false -Dtest="org.drools.model.codegen.execmodel.AccumulateTest#testSubnetworkTuple"
+      run: mvn -pl drools-model -Denforcer.fail=false -Dtest="org.drools.model.codegen.execmodel.QueryTest#testQueryWithAccumulateAndUnification"
       
       
     - name: Run Tests with Nondex 
-      run: mvn -pl drools-model test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Denforcer.fail=false -DfailIfNoTests=false -Dtest=="org.drools.model.codegen.execmodel.AccumulateTest#testSubnetworkTuple"
+      run: mvn -pl drools-model test edu.illinois:nondex-maven-plugin:2.1.1:nondex -Denforcer.fail=false -DfailIfNoTests=false -Dtest=="org.drools.model.codegen.execmodel.QueryTest#testQueryWithAccumulateAndUnification"
      
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
